@@ -4,7 +4,7 @@ export default function Header  () {
 
     return (
     <div> 
-        <h2>2022</h2>
+        <h2>Header</h2>
         <Nav/>
     </div>
     )
