@@ -1,3 +1,10 @@
+import Nav from "./Nav"
+
 export default function Footer () {
-    <div> <h2>2022</h2></div>
+    return (
+    <div> 
+        <h2>Footer</h2>
+        <Nav/>
+    </div>
+    )
 }

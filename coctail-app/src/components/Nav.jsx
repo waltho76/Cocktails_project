@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 
 export default function Nav () {
     return (
-        <div>
-            <Link to='/'>Home</Link>
-            <Link to='/Drinks'>Drinks</Link> 
-        </div>
+        <nav className="navbar">
+            <h3>Navbar</h3>
+            <div>
+                <Link to='/'>Home</Link>
+                <Link to='drinks'>Drinks</Link> 
+                {/* <Link to='/Footer'>Footer</Link> */}
+            </div>
+        </nav>
     )
 }

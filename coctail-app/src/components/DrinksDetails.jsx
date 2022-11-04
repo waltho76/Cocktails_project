@@ -1,17 +1,29 @@
-import { useState, useEffect } from "react"
-import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 
-export default function DrinksDetails () {
+const DrinkDetails = (props) => {
 
-//     const [drinksDetails, setDrinksDetails] = useState({})
-//     const [selectedDrinksDetail, setSelectedDrinksDetail] = useState(null)
+    let { id } = useParams()
 
-//     useEffect(()=> {
-//         const getDrinksDetails = async () => {
-//             const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=')
-//                 console.log(response.data)
-//                 setDrinksDetails(response.data)           
-//         }
-//         getDrinks()
-//     }, [])
- }
+  const [drink, setDrink] = useState('')
+
+     useEffect(() => {
+    let selectedDrink = props.drinks.find((drink) => drink.id === parseInt(id)
+    )
+    setDrink(selectedDrink)
+  }, [props.drink, id])
+
+  return drink ? (
+    <div className="detail">
+      <div className="detail-header">
+        <img src={drink.img} alt={drink.name} />
+        <div style={{minWidth: '30em', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <h1>{drink.name}</h1>
+        </div> 
+      </div>
+      
+    </div>
+  ) : null;
+}
+
+export default DrinkDetails

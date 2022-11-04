@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react"
 import axios from 'axios'
+import Nav from "./Nav"
 
 
-export default function Drinks () {
+export default function Drinks (props) {
 
 
 // we need to create a state for our data
 const [drinks, setDrinks] = useState({})
-const [selectedDrink, setSelectedDrink] = useState(null)
+// const [selectedDrink, setSelectedDrink] = useState(null)
 //we need to call an axios function
 
 useEffect(()=> {
@@ -24,10 +25,15 @@ if (!drinks) {
     return <h2> Loading Page </h2>
 } else{
     return (
+        
         <div>
-          <Drinks drinks={drinks} />
-        </div>
-    )}
+            {/* <Drinks drinks={drinks} /> */}
+            <h2> Drinks Working</h2>
+            <Nav/>
+        </div>  
+        
+        
+)}
 }
 
 //we need to see the data
