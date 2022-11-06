@@ -8,7 +8,8 @@ export default function Nav () {
             
             <div>
                 <Link to='/'>Home</Link>
-                <Link to='drinks'>Drinks</Link> 
+                <Link to='/drinks'>Drinks</Link> 
+                <Link to='/RandomDrink'>Random Drink</Link>
                 {/* <Link to='/Footer'>Footer</Link> */}
             </div>
         </nav>

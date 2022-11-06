@@ -1,34 +1,34 @@
-import { useState, useEffect } from "react"
-import axios from 'axios'
-import { Link } from "react-router-dom"
+import { useState, useEffect, useCallback } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
-export default function Drinks () {
-        
-// we need to create a state for our data
-const [drinks, setDrinks] = useState(null)
-// const [selectedDrink, setSelectedDrink] = useState(null)
-//we need to call an axios function
-
+export default function RandomDrink () {
+    const [drinks, setDrinks] = useState(null)
+    //const [data, setData] = useState([])
+    const getDrink = useCallback(() => {
+        setDrinks(true)
+        })
+ 
 useEffect(()=> {
     const getData = async () => {
-        const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=')
-            // console.log(response.data.drinks)
-            setDrinks(response.data.drinks)  
-    //         selectedDrink()  
-    //         setSelectedDrink(true)
-    }
+        
+    const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    // .then((response) =>{
+        // console.log(response.data.drinks)
+        setDrinks(response.data.drinks)
+    // })
+        // .finally(() => setLoading(false))
+    
+}
     getData()
+       
 },[])
-//we need to set state of our data
-
-//we need to see the data
 // console.log(drinks)
 
 if (!drinks) {
     return <h2> Loading Page </h2>
 } else{
     return (
-        
         <div className="drinks">
             {drinks.map((drink)=> (
             
@@ -53,19 +53,23 @@ if (!drinks) {
                     <p>{drink.strIngredient15} {drink.strMeasure15}</p>
                     </ul>
                     <p>{drink.strInstructions}</p>
-                     <Link to={drink.strVideo} className="video" alt="#"> </Link>
+                     <Link to={drink.strVideo} className="video" alt="#">
                     
-                   
+                    </Link>
+                    <button onClick={getDrink}>Get Another</button>
+
 
                 </div>
             ))}
-
+ 
             
-            <h2> Drinks Working</h2>
+            
             
         </div>  
         
         
 )}
+    
+
 }
 

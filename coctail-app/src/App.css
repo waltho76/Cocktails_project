@@ -1,9 +1,16 @@
 .App {
+  display: grid;
+  
   text-align: center;
 }
 
-drinks {
-  display: flex;
-  flex-direction: column;
+
+
+.drinks {
+  display: grid;
+  grid-auto-rows: auto;
+} 
   
+.ingredients {
+  text-align: left;
 }

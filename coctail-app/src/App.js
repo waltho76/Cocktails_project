@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h2>Hello world</h2>
+        
         <Header/>
         
       </header>
