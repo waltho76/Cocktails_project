@@ -4,20 +4,19 @@ import { Link } from "react-router-dom";
 
 export default function RandomDrink () {
     const [drinks, setDrinks] = useState(null)
-    //const [data, setData] = useState([])
-    const getDrink = useCallback(() => {
-        setDrinks(true)
-        })
+    
+    // const getDrink = useState(null) 
+        
+        
  
 useEffect(()=> {
     const getData = async () => {
         
     const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-    // .then((response) =>{
+   
         // console.log(response.data.drinks)
         setDrinks(response.data.drinks)
-    // })
-        // .finally(() => setLoading(false))
+    
     
 }
     getData()
@@ -34,6 +33,7 @@ if (!drinks) {
             
                 <div key={drink.idDrink}>
                     <h2>{drink.strDrink}</h2>
+                    <p>{drink.strCategory}</p>
                     <img src={drink.strDrinkThumb} alt="#"/>
                     <ul className='ingredients'>
                     <p>{drink.strIngredient1} {drink.strMeasure1}</p>
@@ -56,7 +56,7 @@ if (!drinks) {
                      <Link to={drink.strVideo} className="video" alt="#">
                     
                     </Link>
-                    <button onClick={getDrink}>Get Another</button>
+                    <button onClick={setDrinks}>Get Another</button>
 
 
                 </div>

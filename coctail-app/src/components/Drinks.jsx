@@ -29,11 +29,12 @@ if (!drinks) {
 } else{
     return (
         
-        <div className="drinks">
+        <div className="raandomDrinks">
             {drinks.map((drink)=> (
             
                 <div key={drink.idDrink}>
                     <h2>{drink.strDrink}</h2>
+                    <p>{drink.strCategory}</p>
                     <img src={drink.strDrinkThumb} alt="#"/>
                     <ul className='ingredients'>
                     <p>{drink.strIngredient1} {drink.strMeasure1}</p>
