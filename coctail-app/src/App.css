@@ -1,21 +1,45 @@
 .App {
   display: grid;
-  
   text-align: center;
 }
 
-.navbar {
-  display: grid;
-   
-
+.drinks {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  background-color: black;
+  color: aliceblue;
+  
 }
 
-
-.drinks {
+/* .previewCards {
   display: grid;
-  grid-auto-rows: auto;
-} 
-  
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  grid-gap: 1em;
+  padding: 0.5em;
+} */
+
+
+.randomDrinks {
+  padding: 5em;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
+  background-color: black;
+  color: aliceblue;
+}
+
+.navbar {
+  display: flex;
+  background-color: blue;
+  color: whitesmoke;
+  }
+header {
+  background-color: blue;
+}
 .ingredients {
   text-align: left;
+}
+
+button {
+  background-color: red ;
 }

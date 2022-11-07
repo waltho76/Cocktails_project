@@ -1,36 +1,33 @@
+// import Drinks from "./Drinks"
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
-
 export default function RandomDrink () {
-    const [drinks, setDrinks] = useState(null)
-    // const initialState = useState(null)
-    // reset to initial state
-    // const resetState = () => {
-    //     setDrinks();
-    // };
-    // resetState() 
-        
+
+    let { id } = useParams()
+
+    const [drink, setDrinks] = useState(null)
+    
 useEffect(()=> {
     const getData = async () => {
-        
-    const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${id}`)
    
-        // console.log(response.data.drinks)
-        setDrinks(response.data.drinks)
+        // console.log(response.data.drinks[0])
+        setDrinks(response.data.drinks[0])
     }
     
     getData()
        
 },[])
-console.log(drinks)
+console.log(drink)
 
-if (!drinks) {
+if (!drink) {
     return <h2> Loading Page </h2>
 } else{
     return (
         <div className="randomDrinks">
-            {drinks.map((drink)=> (
+            {drink.map((drink)=> (
             
                 <div key={drink.idDrink}>
                     <h2>{drink.strDrink}</h2>
@@ -61,4 +58,5 @@ if (!drinks) {
         </div>  
 )}
 }
+
 
