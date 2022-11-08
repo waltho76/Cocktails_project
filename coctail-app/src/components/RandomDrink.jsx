@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 
 export default function RandomDrink () {
     const [drinks, setDrinks] = useState(null)
@@ -29,7 +29,7 @@ if (!drinks) {
     return <h2> Loading Page </h2>
 } else{
     return (
-        <div className="randomDrinks">
+        <div className="drinks">
             {drinks.map((drink)=> (
             
                 <div key={drink.idDrink}>
@@ -54,8 +54,9 @@ if (!drinks) {
                     <p>{drink.strIngredient15} {drink.strMeasure15}</p>
                     </ul>
                     <p>{drink.strInstructions}</p>
+                    <Link to={drink.strVideo} className="video" alt="#">
+                    </Link>
                    
-                    <button onClick={setDrinks}>Get Another</button>
                 </div>
             ))}
         </div>  
