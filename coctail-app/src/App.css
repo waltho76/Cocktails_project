@@ -1,11 +1,26 @@
-.home {
-  background-color: black;
+ 
+ .App {
+  background-image: url("https://images.pexels.com/photos/8640338/pexels-photo-8640338.jpeg");
+  text-align: center;
+  background-repeat: repeat;
+  background-size: cover;
+  color: black;
+ }
+ 
+ .home {
+  display: flex;
+  flex-wrap: wrap;
+  background-size: cover;
+  color: black;
 }
 
+button {
+  display: inline;
+  
+}
 
-.App {
-  display: grid;
-  text-align: center;
+.links {
+  
 }
 
 .drinks {
@@ -13,15 +28,33 @@
   flex-wrap: wrap;
   text-align: center;
   justify-content: space-around;
-  background-color: black;
-  color: aliceblue;
+  
+  color: black;
   
 }
 
-.img-thumb {
+.img-thumb, .srcthum {
   max-width: 325px;
   border-radius: 30px;
-  border:solid 10px grey;
+  border:solid 10px rgb(142, 18, 18);
+}
+
+.grid{
+  padding: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  width: 17em;
+  height: 23em;
+  background-color:grey;
+  border-radius: 0.5em;
+  margin: 1em;
+  justify-content: space-around;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.527);
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  border:solid 15px rgb(142, 18, 18);
+  cursor: pointer;
+  transition: 1s;
 }
 
 .previewCards{
@@ -30,15 +63,18 @@
   padding-bottom: 2em;
   width: 17em;
   height: 23em;
-  background-color: rgb(36, 47, 85);
+  background-image:url("https://images.pexels.com/photos/7216000/pexels-photo-7216000.jpeg");
+  background-position: center;
+  background-size: 500px;
+  
   border-radius: 0.5em;
   margin: 1em;
   justify-content: space-around;
   box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.527);
-  color: white;
-  font-family: 'Georgia';
+  color: black;
+  font-family: 'Roboto', sans-serif;
   cursor: pointer;
-  transition: .5s;
+  transition: 1s;
 }
 /* .previewCards {
   display: grid;
@@ -50,28 +86,31 @@
 .randimg {
   border-radius: 30px;
   border:solid 10px grey;
+  color: black;
 }
 
 .randomDrinks {
   padding: 5em;
   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
   background-color: red;
-  color: aliceblue;
+  color: black;
 }
 
-.navbar {
+/* #links {
   display: flex;
-  justify-content: space-evenly;
+  justify-items: left;
+ 
   background-color: blue;
   color: whitesmoke;
-  }
+  } */
 header {
-  background-color: blue;
+  
+  color: black;
 }
 .ingredients {
   text-align: left;
 }
 
 button {
-  background-color: red ;
+  background-color: rgb(185, 174, 174) ;
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
+import DrinkDisplay from "./DrinkDisplay"
 
 export default function Drinks () {
         
@@ -17,11 +18,12 @@ const imgCard =(drink) => {
         const getData = async () => {
           const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`)
                 // console.log(response.data.drinks)
-                .then((response) => {
+                // .then((response) => {
                 setDrinks(response.data.drinks)  
         //         selectedDrink()  
         //         setSelectedDrink(true)
-        })
+        // })
+        
         }
         getData()
     }, [])
@@ -41,7 +43,7 @@ if (!drinks) {
             {drinks.map((drink)=> (
                 <div onClick={() => imgCard(drink)} 
                     key={drink.idDrink}
-                    className="previewCards">
+                    className="previewCards" value={<DrinkDisplay/>}>
                     <h2>{drink.strDrink}</h2>
                     <p>{drink.strCategory}</p>
                     <img className="img-thumb" src={drink.strDrinkThumb} alt="#"/>

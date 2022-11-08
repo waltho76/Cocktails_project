@@ -20,6 +20,7 @@ export default function Main () {
             <Route path="/RandomDrink" element={<RandomDrink/>}/>
             <Route path="/DrinkDisplay" element={<DrinkDisplay/>}/>
             <Route path="/SearchForm" element={<SearchForm/>}/>
+            
         </Routes>
     </div>
     )

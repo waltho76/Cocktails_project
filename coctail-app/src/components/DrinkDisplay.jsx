@@ -1,10 +1,12 @@
-// import Drinks from "./Drinks"
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
+
 export default function DrinkDisplay () {
 
+    
     let navigate = useNavigate()
 
     const showDrinkDisplay = (drink) => {
@@ -15,7 +17,8 @@ export default function DrinkDisplay () {
 
     useEffect(() => {
         const getData = async () => {
-          const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`)
+          const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=
+          `)
            
         // console.log(response.data.drinks[0])
         setDrinkDisplay(response.data.drinks)
@@ -28,8 +31,9 @@ export default function DrinkDisplay () {
 if (!drinkDisplay) {
     return <h2> Loading Info </h2>
 } else{
-    return (
+     return (
         <div className="drinkinfo">
+            
             {drinkDisplay.map((drink)=> (
             
                 <div onClick={() => showDrinkDisplay(drink)}

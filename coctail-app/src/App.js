@@ -15,7 +15,7 @@ function App() {
       </header>
       
       <Main/>
-
+      
       <footer>
         <Footer/>
       </footer>
