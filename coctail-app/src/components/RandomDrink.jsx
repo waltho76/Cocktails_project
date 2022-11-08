@@ -35,7 +35,7 @@ if (!drinks) {
                 <div key={drink.idDrink}>
                     <h2>{drink.strDrink}</h2>
                     <p>{drink.strCategory}</p>
-                    <img src={drink.strDrinkThumb} alt="#"/>
+                    <img ClassName="randimg" src={drink.strDrinkThumb} alt="#"/>
                     <ul className='ingredients'>
                     <p>{drink.strIngredient1} {drink.strMeasure1}</p>
                     <p>{drink.strIngredient2} {drink.strMeasure2}</p>

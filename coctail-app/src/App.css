@@ -1,3 +1,8 @@
+.home {
+  background-color: black;
+}
+
+
 .App {
   display: grid;
   text-align: center;
@@ -5,14 +10,36 @@
 
 .drinks {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   text-align: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: black;
   color: aliceblue;
   
 }
 
+.img-thumb {
+  max-width: 325px;
+  border-radius: 30px;
+  border:solid 10px grey;
+}
+
+.previewCards{
+  padding: 1em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  width: 17em;
+  height: 23em;
+  background-color: rgb(36, 47, 85);
+  border-radius: 0.5em;
+  margin: 1em;
+  justify-content: space-around;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.527);
+  color: white;
+  font-family: 'Georgia';
+  cursor: pointer;
+  transition: .5s;
+}
 /* .previewCards {
   display: grid;
   grid-template-columns: repeat(3, minmax(250px, 1fr));
@@ -20,16 +47,21 @@
   padding: 0.5em;
 } */
 
+.randimg {
+  border-radius: 30px;
+  border:solid 10px grey;
+}
 
 .randomDrinks {
   padding: 5em;
   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
-  background-color: black;
+  background-color: red;
   color: aliceblue;
 }
 
 .navbar {
   display: flex;
+  justify-content: space-evenly;
   background-color: blue;
   color: whitesmoke;
   }

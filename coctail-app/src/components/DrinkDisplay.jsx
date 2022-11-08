@@ -1,35 +1,39 @@
 // import Drinks from "./Drinks"
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export default function RandomDrink () {
+export default function DrinkDisplay () {
 
-    let { id } = useParams()
+    let navigate = useNavigate()
 
-    const [drink, setDrinks] = useState(null)
-    
-useEffect(()=> {
-    const getData = async () => {
-    const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${id}`)
-   
+    const showDrinkDisplay = (drink) => {
+        navigate(`${drink.strIngredient1}`)
+    }
+
+    const [drinkDisplay, setDrinkDisplay] = useState(null)
+
+    useEffect(() => {
+        const getData = async () => {
+          const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`)
+           
         // console.log(response.data.drinks[0])
-        setDrinks(response.data.drinks[0])
+        setDrinkDisplay(response.data.drinks)
     }
     
     getData()
        
 },[])
-console.log(drink)
 
-if (!drink) {
-    return <h2> Loading Page </h2>
+if (!drinkDisplay) {
+    return <h2> Loading Info </h2>
 } else{
     return (
-        <div className="randomDrinks">
-            {drink.map((drink)=> (
+        <div className="drinkinfo">
+            {drinkDisplay.map((drink)=> (
             
-                <div key={drink.idDrink}>
+                <div onClick={() => showDrinkDisplay(drink)}
+                        key={drink.idDrink} className="fuldrinkinfo">
                     <h2>{drink.strDrink}</h2>
                     <p>{drink.strCategory}</p>
                     <img src={drink.strDrinkThumb} alt="#"/>
@@ -52,7 +56,7 @@ if (!drink) {
                     </ul>
                     <p>{drink.strInstructions}</p>
                    
-                    <button onClick={setDrinks}>Get Another</button>
+                    
                 </div>
             ))}
         </div>  

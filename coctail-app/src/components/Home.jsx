@@ -4,7 +4,7 @@ import SearchForm from './SearchForm'
 function Home (){ 
    
     return(
-        <div>
+        <div className="home">
             <SearchForm/>
             
            
