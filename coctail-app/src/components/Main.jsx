@@ -3,6 +3,7 @@ import Home from "./Home";
 import Drinks from "./Drinks";
 import RandomDrink from "./RandomDrink";
 import DrinkDisplay from "./DrinkDisplay"
+import SearchForm from "./SearchForm"
 
 export default function Main () {
 
@@ -18,6 +19,7 @@ export default function Main () {
             <Route path="/Drinks" element={<Drinks/>}/>               
             <Route path="/RandomDrink" element={<RandomDrink/>}/>
             <Route path="/DrinkDisplay" element={<DrinkDisplay/>}/>
+            <Route path="/SearchForm" element={<SearchForm/>}/>
         </Routes>
     </div>
     )

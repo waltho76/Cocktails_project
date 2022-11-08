@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react"
 import axios from 'axios'
+// import SearchForm from "./SearchForm"
 
 export default function Drinks () {
         
 // we need to create a state for our data
 const [drinks, setDrinks] = useState(null)
 const [filteredResults, setFilteredResults] = useState([]);
-const [searchInput, setSearchInput] = useState("")
+//const [searchInput, setSearchInput] = useState("")
 
 //we need to call an axios function
     useEffect(() => {
@@ -28,17 +29,17 @@ const [searchInput, setSearchInput] = useState("")
     // e.target.value being the value of the search bar
     // Then in a searchresult component
     // api call = apicall/${params}
-    const searchItems = (searchValue) => {
-        setSearchInput(searchValue)
-        if (searchInput !== '') {
-            const filteredData = drinks.filter((item) => {
-                return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
-            })
-            setFilteredResults(filteredData)
-        } else{
-            setFilteredResults(drinks)
-        }
-    }
+    // const searchItems = (searchValue) => {
+    //     setSearchInput(searchValue)
+    //     if (searchInput !== '') {
+    //         const filteredData = drinks.filter((item) => {
+    //             return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
+    //         })
+    //         setFilteredResults(filteredData)
+    //     } else{
+    //         setFilteredResults(drinks)
+    //     }
+    // }
    
     
     
@@ -58,7 +59,8 @@ if (!drinks) {
     return (
         <div className="container">
         <div className="drinks">
-            <input type="text" 
+            
+            {/* <input type="text" 
                 placeholder="search for your cocktail" 
                 id="inputBar" 
                 value="" 
@@ -70,7 +72,7 @@ if (!drinks) {
                     onClick={searchItems} 
                     id="searchButton" 
                     value="search"/>
-            </button>
+            </button> */}
             <div className="searchResults">
                 {drinks.map((drink)=> (
                     <div onClick={() => filteredResults(drink)} 
