@@ -4,6 +4,7 @@ import Drinks from "./Drinks";
 import RandomDrink from "./RandomDrink";
 import DrinkDisplay from "./DrinkDisplay"
 import SearchForm from "./SearchForm"
+import Modal from "./Modal";
 
 export default function Main () {
 
@@ -20,6 +21,7 @@ export default function Main () {
             <Route path="/RandomDrink" element={<RandomDrink/>}/>
             <Route path="/DrinkDisplay" element={<DrinkDisplay/>}/>
             <Route path="/SearchForm" element={<SearchForm/>}/>
+            <Route path="/Modal" element={<Modal/>}/>
             
         </Routes>
     </div>

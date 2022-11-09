@@ -43,14 +43,14 @@ return (
         </button>
       </form>
      
-      <div className="grid">
-
+      <div className="container">
+      {/* <img src="https://images.pexels.com/photos/8640338/pexels-photo-8640338.jpeg" alt="#"/> */}
         {searchResults?.map((drink) => (
           <div key={drink.strDrink} className="card">
             <h2>{drink.strDrink} </h2>
                     <p>{drink.strCategory}</p>
                     <img className="srcthum" src={drink.strDrinkThumb} alt="#"/>
-                    <ul className='ingredients'>
+                    <div className='ingredients'>
                     <p>{drink.strIngredient1} {drink.strMeasure1}</p>
                     <p>{drink.strIngredient2} {drink.strMeasure2}</p>
                     <p>{drink.strIngredient3} {drink.strMeasure3}</p>
@@ -66,9 +66,10 @@ return (
                     <p>{drink.strIngredient13} {drink.strMeasure13}</p>
                     <p>{drink.strIngredient14} {drink.strMeasure14}</p>
                     <p>{drink.strIngredient15} {drink.strMeasure15}</p>
-                    </ul>
+                    </div>
+                    <div class="instructions">
                     <p>{drink.strInstructions}</p>
-                    
+                    </div>
                 
           </div>
         ))}

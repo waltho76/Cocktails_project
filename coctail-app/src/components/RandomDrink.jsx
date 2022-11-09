@@ -31,11 +31,11 @@ if (!drinks) {
         <div className="drinks">
             {drinks.map((drink)=> (
             
-                <div key={drink.idDrink}>
+                <div id="randing" key={drink.idDrink}>
                     <h2>{drink.strDrink}</h2>
                     <p>{drink.strCategory}</p>
                     <img className="randimg" src={drink.strDrinkThumb} alt="#"/>
-                    <ul className='ingredients'>
+                    <ul  className='ingredients' >
                     <p>{drink.strIngredient1} {drink.strMeasure1}</p>
                     <p>{drink.strIngredient2} {drink.strMeasure2}</p>
                     <p>{drink.strIngredient3} {drink.strMeasure3}</p>
