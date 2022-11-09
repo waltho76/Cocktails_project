@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Modal.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"
+// import { useNavigate } from "react-router-dom"
 
 export default function Modal() {
     const [modal, setModal] = useState(false);
@@ -10,11 +10,11 @@ export default function Modal() {
     setModal(!modal);
   };
 
-  let navigate = useNavigate()
+//   let navigate = useNavigate()
 
-const imgCard =(drink) => {
-    navigate(`/drinks/${drink.strDrink}`)
-}
+// const imgCard =(drink) => {
+//     navigate(`/drinks/${drink.strDrink}`)
+// }
 
   useEffect(() => {
     const getData = async () => {
@@ -33,25 +33,25 @@ const imgCard =(drink) => {
 
   return (
     <>
-      <button onClick={toggleModal} className="btn-modal">
-        Open
-      </button>
+        <button onClick={toggleModal} className="btn-modal">
+            Open
+        </button>
 
       {modal && (
         <div className="modal">
-            <div onClick={toggleModal} className="overlay"></div>
+            <div className="overlay"></div>
             <div className="modal-content">
                 <div className="container">
                 <div className="drinks">
             
                 {drinks.map((drink)=> (
-                    <div onClick={() => imgCard(drink)} 
+                    <div  
                         key={drink.idDrink}
                         className="modalCard" >
                         <h2>{drink.strDrink}</h2>
                     
-                        {/* <img className="img-thumb" src={drink.strDrinkThumb} alt="#"/> */}
-                        
+                        <img  className="img-thumb" src={drink.strDrinkThumb} alt="#"/>
+                       
                         <ul className='ingredients'>
                         <p>{drink.strIngredient1} {drink.strMeasure1}</p>
                         <p>{drink.strIngredient2} {drink.strMeasure2}</p>
@@ -74,7 +74,8 @@ const imgCard =(drink) => {
                 ))}
             
         </div> 
-        </div>       
+        </div> 
+
             <button className="close-modal" onClick={toggleModal}>
               CLOSE
             </button>

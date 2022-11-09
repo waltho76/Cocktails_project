@@ -41,14 +41,15 @@ if (!drinks) {
         <div className="drinks">
             
             {drinks.map((drink)=> (
-                <div onClick={toggleModal} 
+                <div 
                     key={drink.idDrink}
                     className="previewCards">
+                    
+                    <img onClick={toggleModal} className="img-thumb" src={drink.strDrinkThumb} alt="#"/>
                     {openModal && <Modal />}
                     <h2>{drink.strDrink}</h2>
                     <p>{drink.strCategory}</p>
-                    <img className="img-thumb" src={drink.strDrinkThumb} alt="#"/>
-                      
+                    
                     {/* <ul className='ingredients'>
                     <p>{drink.strIngredient1} {drink.strMeasure1}</p>
                     <p>{drink.strIngredient2} {drink.strMeasure2}</p>
@@ -67,7 +68,7 @@ if (!drinks) {
                     <p>{drink.strIngredient15} {drink.strMeasure15}</p>
                     </ul>
                     <p>{drink.strInstructions}</p> */}
-                </div>
+              </div>
             ))}
             
         </div> 
