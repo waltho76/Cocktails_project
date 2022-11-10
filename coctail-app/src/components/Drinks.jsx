@@ -46,7 +46,7 @@ if (!drinks) {
                     className="previewCards">
                     
                     <img onClick={toggleModal} className="img-thumb" src={drink.strDrinkThumb} alt="#"/>
-                    {openModal && <Modal />}
+                    {openModal && <Modal drink={drink} />}
                     <h2>{drink.strDrink}</h2>
                     <p>{drink.strCategory}</p>
                     

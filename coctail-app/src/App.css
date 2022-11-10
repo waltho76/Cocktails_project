@@ -42,9 +42,22 @@
 }
 
 #randing {
-  color: black !important;
+  margin: 50px;
 }
 
+#randing p{
+  color: black !important;
+  text-align: left;
+}
+
+#randing .randtit p{
+  text-align: center !important;
+}
+
+.ingredientsr {
+  color: #000 !important;
+  text-align: left;
+}
 
 .ingredients p, .instructions p{
   text-align: left;  
@@ -53,8 +66,9 @@
   
 }
 
-.instructions p{
+.instructions {
   line-height: 1.5;
+  text-align: left;
 }
 
 

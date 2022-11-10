@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Modal.css";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom"
+// import { useParams } from "react-router-dom"
 
-export default function Modal() {
+export default function Modal({drink}) {
     const [modal, setModal] = useState(false);
-    const [drinks, setDrinks] = useState(null) 
+    // const [drink, setDrinks] = useState(null) 
+    // let { id } = useParams()
     const toggleModal = () => {
     setModal(!modal);
   };
@@ -16,20 +17,21 @@ export default function Modal() {
 //     navigate(`/drinks/${drink.strDrink}`)
 // }
 
-  useEffect(() => {
-    const getData = async () => {
-      const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`)
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`)
             
-            setDrinks(response.data.drinks)  
-    }
-    getData()
-    }, [])
+  //           setDrinks(response.data.drinks)  
+  //   }
+  //   getData()
+  //   }, [])
 
-  if(modal) {
-    document.body.classList.add('active-modal')
-  } else {
-    document.body.classList.remove('active-modal')
-  }
+console.log(drink)
+
+
+if (!drink) {
+  return <h2> Loading Page </h2>
+} else{
 
   return (
     <>
@@ -44,7 +46,7 @@ export default function Modal() {
                 <div className="container">
                 <div className="drinks">
             
-                {drinks.map((drink)=> (
+                
                     <div  
                         key={drink.idDrink}
                         className="modalCard" >
@@ -52,7 +54,7 @@ export default function Modal() {
                     
                         <img  className="img-thumb" src={drink.strDrinkThumb} alt="#"/>
                        
-                        <ul className='ingredients'>
+                        <ul className='ingredientsm'>
                         <p>{drink.strIngredient1} {drink.strMeasure1}</p>
                         <p>{drink.strIngredient2} {drink.strMeasure2}</p>
                         <p>{drink.strIngredient3} {drink.strMeasure3}</p>
@@ -69,20 +71,22 @@ export default function Modal() {
                         <p>{drink.strIngredient14} {drink.strMeasure14}</p>
                         <p>{drink.strIngredient15} {drink.strMeasure15}</p>
                         </ul>
-                        <p>{drink.strInstructions}</p>
-                    </div>
-                ))}
+                        <p className="instructions_p">{drink.strInstructions}</p>
+                        <p></p>
+                    <button className="close-modal" onClick={toggleModal}>
+                      X
+                    </button>
+                </div>
             
-        </div> 
-        </div> 
+              </div> 
+              </div> 
 
-            <button className="close-modal" onClick={toggleModal}>
-              CLOSE
-            </button>
+            
           </div>
         </div>
       )}
-      <p></p>
-    </>
+    </> 
+    
   );
+}
 }

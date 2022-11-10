@@ -32,10 +32,12 @@ if (!drinks) {
             {drinks.map((drink)=> (
             
                 <div id="randing" key={drink.idDrink}>
-                    <h2>{drink.strDrink}</h2>
+                    <div className="randtit">
+                    <h2>{drink.strDrink}</h2>                    
                     <p>{drink.strCategory}</p>
+                    </div>
                     <img className="randimg" src={drink.strDrinkThumb} alt="#"/>
-                    <ul  className='ingredients' >
+                    <div  className='ingredientsr' >
                     <p>{drink.strIngredient1} {drink.strMeasure1}</p>
                     <p>{drink.strIngredient2} {drink.strMeasure2}</p>
                     <p>{drink.strIngredient3} {drink.strMeasure3}</p>
@@ -51,7 +53,7 @@ if (!drinks) {
                     <p>{drink.strIngredient13} {drink.strMeasure13}</p>
                     <p>{drink.strIngredient14} {drink.strMeasure14}</p>
                     <p>{drink.strIngredient15} {drink.strMeasure15}</p>
-                    </ul>
+                    </div>
                     <p>{drink.strInstructions}</p>
                     
                    

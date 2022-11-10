@@ -44,7 +44,7 @@ return (
       </form>
      
       <div className="container">
-      {/* <img src="https://images.pexels.com/photos/8640338/pexels-photo-8640338.jpeg" alt="#"/> */}
+      
         {searchResults?.map((drink) => (
           <div key={drink.strDrink} className="card">
             <h2>{drink.strDrink} </h2>
@@ -67,7 +67,7 @@ return (
                     <p>{drink.strIngredient14} {drink.strMeasure14}</p>
                     <p>{drink.strIngredient15} {drink.strMeasure15}</p>
                     </div>
-                    <div class="instructions">
+                    <div className="instructions">
                     <p>{drink.strInstructions}</p>
                     </div>
                 
