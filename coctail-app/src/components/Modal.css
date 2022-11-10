@@ -15,6 +15,7 @@
     right: 0;
     bottom: 0;
     position: fixed;
+    overflow: scroll;
 }
 
 .ingredientsm {
@@ -56,6 +57,6 @@
   padding: 30px;
   margin: 0 auto;
   color: rgb(142, 18, 18);
-  box-shadow: 15px 15px 30px rgb(39, 38, 38);
+  /* box-shadow: 15px 15px 30px rgb(39, 38, 38); */
   overflow: scroll;
 }

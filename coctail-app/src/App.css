@@ -13,6 +13,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 30px;
+  min-height: 100vh;
  }
 
 .card {
@@ -169,4 +170,8 @@ button {
   box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3);
   background-color: red;
   color: black;
+}
+
+footer {
+ display: none;
 }
