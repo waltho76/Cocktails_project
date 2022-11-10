@@ -19,18 +19,23 @@
 }
 
 .ingredientsm {
+    font-weight: bold;
+    font-size: small;
     text-align: left;
     color: #ffffff !important;
 }
 
 .instructions_p {
+    
+    
     max-width: 300px;
     margin-bottom: 0;
     text-align: left;
-    text-align: left;  
+    text-anchor: end;  
     font-weight: bold;
     color: #ffffff;
     padding-left: 20px;
+    
 }
 
 .close-modal {
