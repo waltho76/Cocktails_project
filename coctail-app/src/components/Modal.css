@@ -1,16 +1,15 @@
 .modal {
-    background-color: red;
+    
     margin: 60px auto;
-    max-height: 600px;
-    max-width: 600px;
+    max-height: 100%;
+    max-width: 100%;
     border-radius: 30px;
-    max-width: 200px;
-    max-height: 600px;
+    
 }
 
 .modal, .overlay {
-    width: 60vw;
-    height: 70vh;
+    max-width: 100%;
+    max-height: 100%;
     top: 0;
     left: 0;
     right: 0;
@@ -38,7 +37,6 @@
 
 .close-modal {
     position: absolute;
-    right: -170px;
     top: 20px;
     border-radius: 25px;
 }
