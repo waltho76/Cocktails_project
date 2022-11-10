@@ -8,13 +8,8 @@ import Modal from "./Modal";
 
 export default function Main () {
 
-    
-        
-
-        
     return (
     <div>
-        
         <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/Drinks" element={<Drinks/>}/>               
@@ -22,7 +17,6 @@ export default function Main () {
             <Route path="/DrinkDisplay" element={<DrinkDisplay/>}/>
             <Route path="/SearchForm" element={<SearchForm/>}/>
             <Route path="/Modal" element={<Modal/>}/>
-            
         </Routes>
     </div>
     )

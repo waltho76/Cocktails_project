@@ -2,27 +2,18 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function RandomDrink () {
-    const [drinks, setDrinks] = useState(null)
-    // const initialState = useState(null)
-    // reset to initial state
-    // const resetState = () => {
-    //     setDrinks();
-    // };
-    // resetState() 
+
+const [drinks, setDrinks] = useState(null)    
         
-useEffect(()=> {
-    const getData = async () => {
+    useEffect(()=> {
+        const getData = async () => {
+        const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+            setDrinks(response.data.drinks)
+        }
         
-    const response = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-   
-        // console.log(response.data.drinks)
-        setDrinks(response.data.drinks)
-    }
-    
-    getData()
-       
-},[])
-console.log(drinks)
+        getData()
+        },[])
+    console.log(drinks)
 
 if (!drinks) {
     return <h2> Loading Page </h2>
@@ -56,10 +47,9 @@ if (!drinks) {
                     </div>
                     <p>{drink.strInstructions}</p>
                     
-                   
                 </div>
             ))}
         </div>  
-)}
+    )}
 }
 

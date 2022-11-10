@@ -1,59 +1,32 @@
 import React, { useState, useEffect } from "react";
 import "./Modal.css";
-import axios from "axios";
-// import { useParams } from "react-router-dom"
 
 export default function Modal({drink}) {
     const [modal, setModal] = useState(false);
-    // const [drink, setDrinks] = useState(null) 
-    // let { id } = useParams()
     const toggleModal = () => {
     setModal(!modal);
-  };
-
-//   let navigate = useNavigate()
-
-// const imgCard =(drink) => {
-//     navigate(`/drinks/${drink.strDrink}`)
-// }
-
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     const response = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=`)
-            
-  //           setDrinks(response.data.drinks)  
-  //   }
-  //   getData()
-  //   }, [])
+    };
 
 console.log(drink)
-
 
 if (!drink) {
   return <h2> Loading Page </h2>
 } else{
-
   return (
     <>
-        <button onClick={toggleModal} className="btn-modal">
-            Open
-        </button>
-
+      <button onClick={toggleModal} className="btn-modal">
+          INFO
+      </button>
       {modal && (
         <div className="modal">
             <div className="overlay"></div>
             <div className="modal-content">
                 <div className="container">
                 <div className="drinks">
-            
-                
-                    <div  
-                        key={drink.idDrink}
+                    <div key={drink.idDrink}
                         className="modalCard" >
                         <h2>{drink.strDrink}</h2>
-                    
                         <img  className="img-thumb" src={drink.strDrinkThumb} alt="#"/>
-                       
                         <ul className='ingredientsm'>
                         <p>{drink.strIngredient1} {drink.strMeasure1}</p>
                         <p>{drink.strIngredient2} {drink.strMeasure2}</p>
@@ -73,20 +46,16 @@ if (!drink) {
                         </ul>
                         <p className="instructions_p">{drink.strInstructions}</p>
                         <p></p>
-                    <button className="close-modal" onClick={toggleModal}>
-                      X
-                    </button>
-                </div>
-            
-              </div> 
-              </div> 
-
-            
-          </div>
+                        <button className="close-modal" onClick={toggleModal}>
+                          X
+                        </button>
+                    </div>
+                </div> 
+                </div> 
+              </div>
         </div>
       )}
     </> 
-    
   );
 }
 }
