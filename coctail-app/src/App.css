@@ -49,6 +49,7 @@
 #randing p{
   color: black !important;
   text-align: left;
+  font-weight: bold;
 }
 
 #randing .randtit p{
